@@ -44,11 +44,11 @@ export const Navbar: React.FC<NavbarProps> = ({ handleScroll }) => {
           </button>
 
           <ul className={`
-            md:flex md:space-x-6 
+            md:flex md:space-x-6
             ${isMenuOpen ? 'flex' : 'hidden'}
-            md:relative absolute top-full left-0 right-0 
+            md:relative absolute top-full left-0 right-0
             dark:bg-white bg-[#0D1E32]
-            md:flex-row flex-col 
+            md:flex-row flex-col
             md:space-y-0 space-y-2
             md:p-0 p-4
             md:shadow-none shadow-md
