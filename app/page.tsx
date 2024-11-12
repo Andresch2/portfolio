@@ -2,6 +2,7 @@
 import { AboutSection } from "@/components/AboutSection";
 import { HomeSection } from "@/components/HomeSection";
 import { Navbar } from "@/components/Navbar";
+import { ProjectsSection } from "@/components/ProjectsSection";
 import { SkillsSection } from "@/components/SkillsSection";
 
 export default function Home() {
@@ -21,6 +22,10 @@ export default function Home() {
 
         <section className="bg-background">
           <SkillsSection />
+        </section>
+
+        <section className="bg-background">
+          <ProjectsSection />
         </section>
         
       </main>
