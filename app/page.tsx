@@ -1,5 +1,6 @@
 "use client";
 import { AboutSection } from "@/components/AboutSection";
+import { ContactSection } from "@/components/ContactSection";
 import { ExperienceSection } from "@/components/ExperienceSection";
 import { HomeSection } from "@/components/HomeSection";
 import MyInterests from "@/components/MyInterests";
@@ -36,6 +37,10 @@ export default function Home() {
 
         <section className="bg-background">
           <MyInterests />
+        </section>
+
+        <section className="bg-background">
+          <ContactSection />
         </section>
         
       </main>
