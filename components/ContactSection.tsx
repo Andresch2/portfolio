@@ -1,3 +1,4 @@
+import emailjs from 'emailjs-com';
 import React, { useState } from 'react';
 
 export const ContactSection: React.FC = () => {
@@ -5,10 +6,30 @@ export const ContactSection: React.FC = () => {
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
+  const [isSent, setIsSent] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log({ name, email, subject, message });
+
+    try {
+      const response = await emailjs.send(
+        'service_g7i3e7u',
+        'template_bkcyq4c',
+        {
+          name,
+          email,
+          subject,
+          message,
+        },
+        '67nI5ZJx1Ht-sV1TF'
+      );
+      
+      console.log('Correo enviado:', response.status, response.text);
+      setIsSent(true);
+    } catch (err) {
+      console.error('Error al enviar el correo:', err);
+    }
+
     setName('');
     setEmail('');
     setSubject('');
@@ -19,7 +40,7 @@ export const ContactSection: React.FC = () => {
     <section id="contactos" className="text-center text-light-blue py-12">
       <h1 className="text-3xl font-semibold mb-6">Contactos</h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-dark-blue p-10 rounded-lg max-w-4xl mx-auto">
+      <article className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-dark-blue p-10 rounded-lg max-w-4xl mx-auto">
         <section className="flex flex-col justify-center text-left">
           <h2 className="text-lg font-semibold mb-4">Ponte en contacto</h2>
           <p className="text-sm mb-4 leading-6">
@@ -35,22 +56,22 @@ export const ContactSection: React.FC = () => {
             />
             andresch311@gmail.com
           </p>
-          <section className="flex space-x-4">
-            <a href="https://github.com/Andresch2" target="_blank">
+          <aside className="flex space-x-4">
+            <a href="https://github.com/Andresch2" target="_blank" rel="noopener noreferrer">
               <img 
                 src="/images/github.png" 
                 alt="GitHub" 
                 className="w-6 h-6  hover:opacity-80 transition-opacity" 
               />
             </a>
-            <a href="https://www.linkedin.com/in/andr%C3%A9s-chaves-968213325/" target="_blank">
+            <a href="https://www.linkedin.com/in/andr%C3%A9s-chaves-968213325/" target="_blank" rel="noopener noreferrer">
               <img 
                 src="/images/linkedin.png" 
                 alt="LinkedIn" 
                 className="w-6 h-6 hover:opacity-80 transition-opacity" 
               />
             </a>
-          </section>
+          </aside>
         </section>
 
         <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-3 text-left">
@@ -62,6 +83,7 @@ export const ContactSection: React.FC = () => {
               className="w-full bg-medium-blue text-light-blue p-2 rounded-md text-sm"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              required
             />
           </label>
           <label>
@@ -72,6 +94,7 @@ export const ContactSection: React.FC = () => {
               className="w-full bg-medium-blue text-light-blue p-2 rounded-md text-sm"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
           </label>
           <label>
@@ -82,6 +105,7 @@ export const ContactSection: React.FC = () => {
               className="w-full bg-medium-blue text-light-blue p-2 rounded-md text-sm"
               value={subject}
               onChange={(e) => setSubject(e.target.value)}
+              required
             />
           </label>
           <label>
@@ -91,13 +115,15 @@ export const ContactSection: React.FC = () => {
               className="w-full bg-medium-blue text-light-blue p-2 rounded-md text-sm h-40"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
+              required
             ></textarea>
           </label>
           <button type="submit" className="w-full bg-blue-primary text-light-blue p-2 rounded-md text-sm mt-4">
             Enviar mensaje
           </button>
+          {isSent && <p className="text-green-500 mt-4">¡Mensaje enviado con éxito!</p>}
         </form>
-      </div>
+      </article>
     </section>
   );
 };
