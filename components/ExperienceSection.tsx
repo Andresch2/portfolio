@@ -7,7 +7,7 @@ export const ExperienceSection: React.FC = () => {
       <img
         src="/images/esfera.png"
         alt="Fondo de esfera"
-        className="absolute inset-0 w-full h-full object-cover opacity-20 dark:opacity-20 z-0"
+        className="absolute inset-0 w-full h-full object-cover opacity-10 dark:opacity-20 z-0"
       />
 
       <header className="text-center mb-8 relative z-10">
