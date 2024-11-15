@@ -25,7 +25,9 @@ export const ProjectsSection: React.FC = () => {
                             con funcionalidades de CRUD. Utilicé patrones de diseño, también MongoDB como base de datos.
                         </p>
                         <a
-                            href="..."
+                            href="https://github.com/Andresch2/Sistema-de-Gesti-n-de-Cursos-Online.git"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="bg-blue-primary text-white py-3 px-6 rounded-lg text-lg hover:bg-primary-600 transition-transform duration-300 ease-in-out hover:scale-105"
                         >
                             Repositorio
