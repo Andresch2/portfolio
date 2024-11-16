@@ -38,7 +38,7 @@ export const ContactSection: React.FC = () => {
 
   return (
     <section id="contactos" className="text-center text-light-blue py-12">
-      <h1 className="text-3xl font-semibold mb-6">Contactos</h1>
+      <h1 className="text-3xl font-semibold mb-6 text-foreground dark:text-primary-100">Contactos</h1>
 
       <article className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-dark-blue p-10 rounded-lg max-w-4xl mx-auto">
         <section className="flex flex-col justify-center text-left">
@@ -49,25 +49,25 @@ export const ContactSection: React.FC = () => {
           </p>
           <p className="text-sm mb-4 leading-6">También puedes seguirme en mis redes sociales:</p>
           <p className="flex items-center mb-4">
-            <img 
-              src="/images/email.png" 
-              alt="Correo" 
-              className="w-5 h-5 mr-2 " 
+            <img
+              src="/images/email.png"
+              alt="Correo"
+              className="w-5 h-5 mr-2 "
             />
             andresch311@gmail.com
           </p>
           <aside className="flex space-x-4">
             <a href="https://github.com/Andresch2" target="_blank" rel="noopener noreferrer">
-              <img 
-                src="/images/github.png" 
-                alt="GitHub" 
+              <img
+                src="/images/github.png"
+                alt="GitHub"
                 className="w-6 h-6  hover:opacity-80 transition-opacity" 
               />
             </a>
             <a href="https://www.linkedin.com/in/andr%C3%A9s-chaves-968213325/" target="_blank" rel="noopener noreferrer">
-              <img 
-                src="/images/linkedin.png" 
-                alt="LinkedIn" 
+              <img
+                src="/images/linkedin.png"
+                alt="LinkedIn"
                 className="w-6 h-6 hover:opacity-80 transition-opacity" 
               />
             </a>
