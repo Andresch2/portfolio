@@ -15,7 +15,7 @@ const MyInterests: React.FC = () => {
         </li>
 
         <li className="relative grid grid-cols-[minmax(180px,_1fr)_2fr] gap-6 items-center border-4 border-primary-300 dark:border-primary-700 p-4 rounded-lg text-left max-w-[900px] mx-auto animate-fade-in-up transition-transform duration-500 hover:scale-105 delay-100">
-            <img src="images/myphoto.jpg" alt="Viajar" className="w-[65%] h-auto rounded-lg mx-auto transition-transform duration-300 ease-in-out hover:scale-110" />
+            <img src="images/viajar.jpg" alt="Viajar" className="w-[65%] h-auto rounded-lg mx-auto transition-transform duration-300 ease-in-out hover:scale-110" />
             <article className="flex flex-col justify-center p-4 text-foreground dark:text-primary-100">
             <strong className="text-md font-semibold">Viajar:</strong>
             <p className="text-sm">Me encanta explorar nuevos lugares y conocer diferentes culturas. Cada viaje es una oportunidad para aprender algo nuevo.</p>
